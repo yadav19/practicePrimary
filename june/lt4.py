@@ -7,12 +7,11 @@ for _ in range(int(input())):
         for j in range(len(x)):
             if x[j]=='1':xx[j]+=1
     ans=0
-    while k:
+    while k>0:
         k-=1;c=0;p=-1
         for i in range(32):
             if(xx[i]>0):
-                if(ans+xx[i]*(2**i)>ans+c): c=xx[i]*2**i;p=i
+                if(ans+xx[i]*(2**i)>ans+c): c=xx[i]*2**i;p=2**i
         if(p==-1): break
-        else: ans+=c;xx[i]=0
+        else: ans+=p;xx[i]=0
     print(ans)
-
