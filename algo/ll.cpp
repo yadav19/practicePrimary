@@ -24,8 +24,13 @@ Node * inserttail(Node*head,int data)
 
 void insertT(Node*head,int data)
 {
-    while(head->next!=NULL) head=head->next;
-    head->next = new Node(data);
+    if(head == NULL) head = new Node(data);
+    else
+    {
+        while(head->next!=NULL) head=head->next;
+        head->next = new Node(data);
+    }
+    
 }
 void display(Node*head)
 {
@@ -37,8 +42,8 @@ void display(Node*head)
 }
 int main()
 {
-    Node *head = NULL;
-    for(int i=1;i<10;i++) head = insert(head,i),insertT(head,100-i);
+    Node *head = new Node(1);
+    for(int i=1;i<10;i++) insertT(head,100-i);
     display(head);   
     cout<<endl;
     display(head);
