@@ -1,0 +1,84 @@
+OSI(open system interconnection):
+When two application/services try to communicate remotely from different host, 
+they follow set of rules which is OSI model.
+simply, OSI model is the basic network architecture for communication.
+It is divided into 7 parts:
+1. Physical Layer
+2. Data Link Layer
+3. Network Layer
+4. Transmission Layer
+5. Session Layer
+6. Application Layer
+7. Presentation Layer
+
+1. Physical Layer:
+    This deals with all the physical aspects of the network architecture.
+    this include:
+    i. Physical Hardwares: network card, wires, router, etc.
+    ii. Encoding/Decoding: Digital data to Analog Signals and Analog signals to digital data.
+    iii. Transmission/ Reception: It also deals with transmittion these Analog signals, as well as recieving them.
+    iv. Network Topology:
+        It means how the different servers/nodes are connected to each other which in itself forms the network,
+        and thereby, communication happens.
+        different types of network Topologies are:
+
+        a. Bus Topology : 
+            All servers/nodes are connected to a single channel.
+            Disadvantages: 
+            > very hard to detect errors.
+            > very limited speed due to single main channel.
+            Advantages:
+            > broadcasting is easy.
+        
+        b. Star Topology:
+            All servers/nodes are connected to a centralised hub.
+            Advantages:
+            > Easy for error detection.
+            > most optimum speed.
+            > easy communication between nodes.
+            Disadvantages:
+            > once the centralised hub crashes, the whole network shuts down.
+        
+        c. Mesh Topology:
+            servers are connected to many other servers but not all of them.
+            Advantages: 
+            >broadcasting is easy.
+            Disadvantages:
+            > expensive.
+            > error detection is hard.
+        
+        d. Ring/Circle Topology
+            one server is connect to two other servers thus forming a circle/ring structure.
+            Advantages:
+            > Broadcasting is easy.
+            > error detection is easy.
+            Disadvantages:
+            > once one server goes down all goes to hell.
+
+2. Data Link Layer:
+    This layer acts like a brain to the body that is the Network Layer.
+    works in this layer includes:
+    i. Framing
+    ii. Sequence Numbering
+    iii. Acknowledgement
+    iv. Error detection
+    v. Retransmission
+    vi. Flow Control
+
+3. Network Layer:
+    Deals with routing data packets from source to the destination.
+    1. Routing
+    2. Congestion
+    3. InterNetworking
+
+4. Transport Layer:
+    desls with:
+    i. Multiplexing/Demultiplexing
+    ii. Fragmentation/Assembly
+    iii. Mode of Transmission
+    iv. Flow Control
+    v. Error detection
+
+5. Session Layer
+6. Application Layer
+7. Presentation Layer
