@@ -21,7 +21,6 @@ It is divided into 7 parts:
         It means how the different servers/nodes are connected to each other which in itself forms the network,
         and thereby, communication happens.
         different types of network Topologies are:
-
         a. Bus Topology : 
             All servers/nodes are connected to a single channel.
             Disadvantages: 
@@ -58,26 +57,61 @@ It is divided into 7 parts:
 2. Data Link Layer:
     This layer acts like a brain to the body that is the Network Layer.
     works in this layer includes:
-    i. Framing
-    ii. Sequence Numbering
-    iii. Acknowledgement
-    iv. Error detection
-    v. Retransmission
+    i. Framing:
+        Physical layer only considers transmitting and recieving signals but it doesn't anything else.
+        so, DLL is the one who divides the data packets into frames.
+
+    ii. Sequence Numbering:
+        it gives numbers/indices to these frames for reference.
+
+    iii. Acknowledgement:
+        It Acknowledges if a frame has been recieved or not.
+        so, that no data is left behind without being sent/recieved.
+
+    iv. Error detection:
+        It detects if the recieved frames are complete or has any attenuation/damages in them.
+        If the data cannot be recovered then it asks the source for that data again.
+
+    v. Retransmission:
+        If the destination asks for a frame again due to damage or some other problem due to
+        which the reciever couldn't recieve any frame then it is also DLL's duty to retransmit them.
+
     vi. Flow Control
 
 3. Network Layer:
     Deals with routing data packets from source to the destination.
-    1. Routing
-    2. Congestion
-    3. InterNetworking
+    1. Routing : 
+        whenever there is a transport of data from a source to destination. The data mostly, if not always,
+        has to travel through nodes to reach the required destination and it is the duty to Network Layer to forward
+        these packets towards right direction.
+
+    2. Congestion:
+        when a router is connected with a lot of nodes and all of them simultaneously try to transmit some data
+        at the maximum speed possible then the data is exposed to some loss, if not all of it. It is the duty of
+        Network layer to give time to each of these nodes as a shedule to transmit some of their data and goes to the other ones
+        and comes back to that one again.
+
+    3. InterNetworking:
+        when networks are connected to each other to form a greater network and data can be shared.
 
 4. Transport Layer:
     desls with:
-    i. Multiplexing/Demultiplexing
-    ii. Fragmentation/Assembly
-    iii. Mode of Transmission
-    iv. Flow Control
-    v. Error detection
+    i. Multiplexing/Demultiplexing:
+        can create multiple networks or can join multiple networks into one for the better transmission of data.
+
+    ii. Fragmentation/Assembly:
+        the data recieved from session layer is fragmented into packets and each packets are indexed.
+
+    iii. Mode of Transmission:
+        It also choose between reliable(TCP) and Unreliable(UDP) mode of transmission of data.
+
+    iv. Flow Control:
+        If a very fast source is connected to very slow destination then data loss occurs. 
+        Transport Layer also has to manage this.
+    
+    v. Error detection:
+        If reliable(TCP) mode of transmission has been chosen then it is also Transport Layers duty to  make sure that 
+        the all the data has reached the destination without any damage/error. 
 
 5. Session Layer
 6. Application Layer
