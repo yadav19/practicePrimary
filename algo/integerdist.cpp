@@ -1,60 +1,134 @@
+
 #include<bits/stdc++.h>
-#define inf 1e18
-#define ll long long
 using namespace std;
-ll dp1[1100005],dp2[1100005];
+#define inf  __LONG_LONG_MAX__
+#define ll long long
 int main()
 {
-	int n;
-	cin>>n;
-	assert(n>=1 && n<=20);
-	assert(!(n&1));
-	ll a[25];
-	for(int i=0;i<n;i++)
+    int n;
+    scanf("%d",&n);
+    vector<ll> a(n+5);
+    for(int i=0;i<n;i++) scanf("%d",&a[i]);
+	vector<ll> dp1(1<<n,1ll*0);
+	vector<ll> dp2(1<<n,1ll*0);
+	int last = (1<<n)-1;
+	for(int i=0;i<=last;i++)
 	{
-		cin>>a[i];
-		assert(a[i]>=0 && a[i]<=2147483647);
-	}
-	int lim=(1<<n)-1;
-	for(int i=0;i<=lim;i++)
-	{
-		dp1[i]=0;bool f=0;
 		if(__builtin_popcount(i)==2)
 		{
-			int x,mask;
 			for(int j=0;j<n;j++)
+			if(i&(1<<j)) 
 			{
-				if(i & (1<<j)){
-					dp1[i]=dp1[i]^a[j];dp2[i]=dp1[i];
-				}
+				dp1[i]=dp1[i]^a[j];
+				dp2[i]=dp1[i];
 			}
 		}
-		else {dp1[i]=inf;}
+		else dp1[i]=inf;
 	}
-	for(int i=1;i<=lim;i++)
+	for(int i=1;i<=last;i++)
 	{
 		bool f=0;
-		int cnt=__builtin_popcount(i);
-		if(!(cnt & 1))
+		if(!(__builtin_popcount(i)&1))
 		{
 			int x,mask;
 			for(int j=0;j<n;j++)
 			{
-				if(!f && !(i & (1<<j)))
+				if(!f && !(i&(1<<j))) 
 				{
-					f=1;x=a[j];mask=i|(1<<j);
+					f=1;
+					x=a[j];
+					mask=i|(1<<j);
 				}
-				else if(f && !(i & (1<<j)))
+				else if(f && !(i&(1<<j)))
 				{
-					dp1[mask|(1<<j)]=min(dp1[mask|(1<<j)],dp1[i]+(x^a[j]));
-					dp2[mask|(1<<j)]=max(dp2[mask|(1<<j)],dp2[i]+(x^a[j]));
+					dp1[mask|(1<<j)] = min(dp1[mask|(1<<j)],dp1[i]+(x^a[j]));
+					dp2[mask|(1<<j)] = max(dp2[mask|(1<<j)],dp2[i]+(x^a[j]));
 				}
 			}
 		}
 	}
-	cout<<dp1[lim]<<" "<<dp2[lim]<<"\n";
+
+	cout<<dp1[last]<<" "<<dp2[last];
+	
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// #include<bits/stdc++.h>
+// #define inf 1e18
+// #define ll long long
+// using namespace std;
+// ll dp1[1100005],dp2[1100005];
+// int main()
+// {
+// 	int n;
+// 	cin>>n;
+// 	assert(n>=1 && n<=20);
+// 	assert(!(n&1));
+// 	ll a[25];
+// 	for(int i=0;i<n;i++)
+// 	{
+// 		cin>>a[i];
+// 		assert(a[i]>=0 && a[i]<=2147483647);
+// 	}
+// 	int lim=(1<<n)-1;
+// 	for(int i=0;i<=lim;i++)
+// 	{
+// 		dp1[i]=0;bool f=0;
+// 		if(__builtin_popcount(i)==2)
+// 		{
+// 			int x,mask;
+// 			for(int j=0;j<n;j++)
+// 			{
+// 				if(i & (1<<j)){
+// 					dp1[i]=dp1[i]^a[j];dp2[i]=dp1[i];
+// 				}
+// 			}
+// 		}
+// 		else {dp1[i]=inf;}
+// 	}
+// 	for(int i=1;i<=lim;i++)
+// 	{
+// 		bool f=0;
+// 		int cnt=__builtin_popcount(i);
+// 		if(!(cnt & 1))
+// 		{
+// 			int x,mask;
+// 			for(int j=0;j<n;j++)
+// 			{
+// 				if(!f && !(i & (1<<j)))
+// 				{
+// 					f=1;x=a[j];mask=i|(1<<j);
+// 				}
+// 				else if(f && !(i & (1<<j)))
+// 				{
+// 					dp1[mask|(1<<j)]=min(dp1[mask|(1<<j)],dp1[i]+(x^a[j]));
+// 					dp2[mask|(1<<j)]=max(dp2[mask|(1<<j)],dp2[i]+(x^a[j]));
+// 				}
+// 			}
+// 		}
+// 	}
+// 	cout<<dp1[lim]<<" "<<dp2[lim]<<"\n";
+// 	return 0;
+// }
 
 /*
 /*
