@@ -1,0 +1,35 @@
+Operatng Systems:
+    > OS is an interface between user and hardware
+    > Resource allocation
+    > manager -> memory, processes, files, security,etc;
+
+    ->System Call:
+        whenever we require any system resource. we call upon the OS for that resource.
+        printf is done by write system call on the console.
+    
+    Goals:
+        > Convenience: so that we dont have to write system call every time we use some resource
+                        but we make it easy by packing it up into one system call by the OS.
+        > Efficiency: best way for a system call is already implemented into the OS.
+
+Two types of Processing:
+1. CPU
+2. IO
+
+Types:
+> Batch OS:
+    single computer was available and users code will be executed in queue.
+    people used to collect results after sometime.
+    CONS:
+        >if a preceeding job will take many days then 
+         all succeeding jobs will be stopped, irrespective of their time being just 1s.
+        > CPU can be idle.
+> Multiprogramming:
+    > CPU can never be idle.
+> Multitasking
+    > every task/job are given set time opportunity and
+    their intermideate results are stored.
+> multiprocessing:
+    > many cpu in one computer.
+> Realtime:
+    > jobs with deadline
