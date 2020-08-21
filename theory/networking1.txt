@@ -116,3 +116,6 @@ It is divided into 7 parts:
 5. Session Layer
 6. Application Layer
 7. Presentation Layer
+
+Transmission Control Protocol(TCP):
+Internet Protocol(IP):
