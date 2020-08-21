@@ -49,8 +49,6 @@ int main()
 	}
 
 	cout<<dp1[last]<<" "<<dp2[last];
-	
-	return 0;
 }
 
 
