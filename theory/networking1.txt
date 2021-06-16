@@ -39,7 +39,7 @@ It is divided into 7 parts:
             > once the centralised hub crashes, the whole network shuts down.
         
         c. Mesh Topology:
-            servers are connected to many other servers but not all of them.
+            servers are connected to one/many other servers but not all of them.
             Advantages: 
             >broadcasting is easy.
             Disadvantages:
